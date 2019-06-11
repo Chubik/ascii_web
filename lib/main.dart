@@ -26,7 +26,6 @@ class MainPage extends StatefulWidget {
 }
 
 class MyHomePage extends State<MainPage> {
-  // MyHomePage({Key key, this.title}) : super(key: key);
 
   String title = 'Droid generator by Flutter';
 
@@ -63,7 +62,6 @@ class MyHomePage extends State<MainPage> {
                     case ConnectionState.none:
                     case ConnectionState.waiting:
                       return CircularProgressIndicator();
-                      // new Text('loading...');
                     default:
                       if (snapshot.hasError)
                         return new Text('Error: ${snapshot.error}');
