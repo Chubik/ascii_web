@@ -26,19 +26,13 @@ class MainPage extends StatefulWidget {
 }
 
 class MyHomePage extends State<MainPage> {
-
   String title = 'Droid generator by Flutter';
 
   String _droid = "";
 
   Future<String> getDroid() async {
-    http.Response response = await http.get(
-      Uri.encodeFull(baseUrl),
-      headers: { 
-        "Content-Type": "text/plain; charset=utf-8"
-      }
-    );
-
+    http.Response response = await http.get(Uri.encodeFull(baseUrl),
+        headers: {"Content-Type": "text/plain; charset=utf-8"});
     return response.body;
   }
 
@@ -66,7 +60,10 @@ class MyHomePage extends State<MainPage> {
                       if (snapshot.hasError)
                         return new Text('Error: ${snapshot.error}');
                       else
-                        return new Text(snapshot.data);
+                        return new Text(
+                          snapshot.data,
+                          textAlign: TextAlign.center,
+                        );
                   }
                 }),
             new RaisedButton(
